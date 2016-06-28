@@ -23,7 +23,7 @@
 
 ▼問題用プロジェクト▼
 
-[__「連打ゲーム」__](https://github.com/natsumo/SwiftFirstApp/archive/master.zip)
+[__「連打ゲーム」__](https://github.com/natsumo/UnityFirstApp/archive/master.zip)
 
 1. 上記リンクをクリックしてzipファイルをローカルに保存します
 1. zipファイルを解凍して、`SwiftFirstApp.xcworkspace`をダブルクリックしてXcodeでプロジェクトを開きます
@@ -104,7 +104,7 @@ __【作業1-2】__シュミレーターで実行、「Start」ボタンを押�
 
 ▼答えはこちら▼
 
-[__【問題１】解答__](https://github.com/natsumo/SwiftFirstApp/blob/AnswerProject/Answer1.md)
+[__【問題１】解答__](https://github.com/natsumo/UnityFirstApp/blob/AnswerProject/Answer1.md)
 
 
 ## __【問題２】__：ランキングを表示しよう！
@@ -168,7 +168,7 @@ __【作業2-4】__シュミレーターで実行、「ランキングを見る�
 
 ▼答えはこちら▼
 
-[__【問題２】解答__](https://github.com/natsumo/SwiftFirstApp/blob/AnswerProject/Answer2.md)
+[__【問題２】解答__](https://github.com/natsumo/UnityFirstApp/blob/AnswerProject/Answer2.md)
 
 ## 参考
 
@@ -176,6 +176,6 @@ __【作業2-4】__シュミレーターで実行、「ランキングを見る�
 
 ▼完成版プロジェクト▼
 
-[__「【完成版】連打ゲーム」__](https://github.com/natsumo/SwiftFirstApp/archive/AnswerProject.zip)
+[__「【完成版】連打ゲーム」__](https://github.com/natsumo/UnityFirstApp/archive/AnswerProject.zip)
 
 * APIキーを設定してご利用ください
