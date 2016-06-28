@@ -48,7 +48,7 @@
 * アプリが作成されるとAPIキーが２種類（アプリケーションキーとクライアントキー）発行されます
 * 次で使用します。
 
-![Xcode](/readme-img/Xcode.png)
+![Unity](/readme-img/Unity.png)
 
 * `AppDelegate.swift`を編集します
 * 先程[ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)のダッシュボード上で確認したAPIキーを貼り付けます
