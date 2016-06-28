@@ -24,7 +24,7 @@ public class Manager : MonoBehaviour
 //			if (Bg_ghost.readyGhost == true)
 //				ghostButton.gameObject.SetActive (true);
 //			else
-//				ghostButton.gameObject.SetActive (false);
+				ghostButton.gameObject.SetActive (false);
 
 
 		}
