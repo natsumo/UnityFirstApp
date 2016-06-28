@@ -1,0 +1,17 @@
+/Users/oomoritarou/Documents/Unity/UnityFirstApp/Temp/bin/Debug/UnityEngine.dll
+/Users/oomoritarou/Documents/Unity/UnityFirstApp/Temp/bin/Debug/UnityEditor.dll
+/Users/oomoritarou/Documents/Unity/UnityFirstApp/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/oomoritarou/Documents/Unity/UnityFirstApp/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/oomoritarou/Documents/Unity/UnityFirstApp/Temp/bin/Debug/Mono.Cecil.dll
+/Users/oomoritarou/Documents/Unity/UnityFirstApp/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/oomoritarou/Documents/Unity/UnityFirstApp/Temp/bin/Debug/Unity.DataContract.dll
+/Users/oomoritarou/Documents/Unity/UnityFirstApp/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/oomoritarou/Documents/Unity/UnityFirstApp/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/oomoritarou/Documents/Unity/UnityFirstApp/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/oomoritarou/Documents/Unity/UnityFirstApp/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/oomoritarou/Documents/Unity/UnityFirstApp/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/oomoritarou/Documents/Unity/UnityFirstApp/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/oomoritarou/Documents/Unity/UnityFirstApp/Temp/bin/Debug/Assembly-CSharp.dll.mdb
+/Users/oomoritarou/Documents/Unity/UnityFirstApp/Temp/bin/Debug/Assembly-CSharp.dll
+/Users/oomoritarou/Documents/Unity/UnityFirstApp/obj/Debug/Assembly-CSharp.dll
+/Users/oomoritarou/Documents/Unity/UnityFirstApp/obj/Debug/Assembly-CSharp.dll.mdb
