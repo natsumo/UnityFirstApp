@@ -8,30 +8,28 @@
 
 ![ans1-1](/readme-img/ans1-1.png)
 
-* 上図はスコアが35連打で名前を「あいうえお」とした場合の例です。
-
 ### コードの答え合わせ
-
-![Xcode](/readme-img/Xcode.png)
 
 * 模範解答は以下です
 
-```swift
+```csharp
 // **********【問題１】名前とスコアを保存しよう！**********
-// 保存先クラスを作成
-let obj = NCMBObject(className: "GameScore")
-// 値を設定
-obj.setObject(name, forKey: "name")
-obj.setObject(score, forKey: "score")
-// 保存を実施
-obj.saveInBackgroundWithBlock{(error: NSError!) -> Void in 
-    if (error != nil) {
+NCMBObject obj = new NCMBObject ("GameScore");
+obj ["name"] = name;//オブジェクトに名前とスコアを設定
+obj ["score"] = score;
+/* ゴースト機能 */
+//		obj ["Log"] = Player.posList;
+obj.SaveAsync ((NCMBException e) => { //この処理でサーバーに書き込む
+    if (e != null)
+    {
         // 保存に失敗した場合の処理
-        print("保存に失敗しました。エラーコード:\(error.code)")
-    }else{
-        // 保存に成功した場合の処理
-        print("保存に成功しました。objectId:\(obj.objectId)")
+        Debug.Log("保存に失敗しました。エラーコード:"+e.ErrorCode);
     }
-}
+    else
+    {
+        // 保存に成功した場合の処理
+        Debug.Log("保存に成功しました。objectId:"+ obj.ObjectId);
+    }
+});
 // **************************************************
 ```
