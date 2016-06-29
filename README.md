@@ -154,7 +154,6 @@ __【作業2-3】__検索に成功したら、該当する箇所に以下の処�
 * 検索に成功した場合の処理を行う箇所に追記
 
 ```csharp
-
 //検索成功時の処理
 Debug.Log("検索に成功しました。");
 
@@ -166,7 +165,6 @@ foreach (NCMBObject obj in objList) {
 	list.Add( new Rankers( s, n ) );
 }
 topRankers = list;
-
 ```
 
 __【作業2-4】__Unityから「再生」し、「LeaderBoard」(ランキングを見る)ボタンをタップします。
