@@ -38,5 +38,6 @@ query.FindAsync ((List<NCMBObject> objList ,NCMBException e) => {
 		}
 		topRankers = list;
 	}
+});
 // **************************************************
 ```
