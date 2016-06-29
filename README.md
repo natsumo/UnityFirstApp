@@ -117,7 +117,7 @@ __【作業1-2】__ Unityから「再生」をクリックすると、【ゲー�
 
 ### ヒント
 * [ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)のUnityドキュメントをご参考ください。
- * [データストア（Unity）基本的な使い方](http://mb.cloud.nifty.com/doc/current/datastore/basic_usage_unity.html)
+ * [データストア（Unity）ランキングを作る](http://mb.cloud.nifty.com/doc/current/datastore/ranking_unity.html)
 
 ### コーディング後の作業
 問題２のコーディングが完了したら、下記の作業を行います。
