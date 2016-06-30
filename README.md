@@ -62,14 +62,15 @@
 ## __【問題１】__：名前とスコアの保存をしてみよう！
 `/Assets/Scripts/saveScore.cs`を開きます。下図の__`saveScore`__メソッドを編集し、引数の__`name`__（アラートで入力した名前）と__`score`__（シューティングゲームのスコア）の値をmBaaSに保存する処理をコーディングしてください。
 
-[問題1-1](/readme-img/1-1.png)
+![問題1-1](/readme-img/1-1.png)
 
 * データストアに保存先クラスを作成します。
 * クラス名は「`GameScore`」としてください。
 * `name`を保存するフィールドを「`name`」、`score`を保存するフィールドを「`score`」として保存してください。
 
 ### ヒント
-* [Unityドキュメント](http://mb.cloud.nifty.com/doc/current/datastore/basic_usage_unity.html)はデータストアの基本使い方法（保存・取得・更新・削除）が参照出来ます。
+* [ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)のUnityドキュメントをご参考ください。
+ * [データストア（Unity）基本的な使い方](http://mb.cloud.nifty.com/doc/current/datastore/basic_usage_unity.html)
 
 ### コーディング後の作業
 問題１のコーディングが完了したら、下記の作業を行います。
@@ -80,17 +81,17 @@ __【作業1-1】__それぞれ該当する箇所に以下の処理を追記し�
 
 ```csharp
 // 保存に失敗した場合の処理
-UnityEngine.Debug.Log("保存に失敗しました。エラーコード:"+e.ErrorCode);
+Debug.Log("保存に失敗しました。エラーコード:"+e.ErrorCode);
 ```
 
 * 保存に成功した場合の処理を行う箇所に追記
 
 ```csharp
 // 保存に成功した場合の処理
-UnityEngine.Debug.Log("保存に成功しました。objectId:"+ obj.ObjectId);
+Debug.Log("保存に成功しました。objectId:"+ obj.ObjectId);
 ```
 
-__【作業1-2】__Unityから「再生」をクリックすると、【ゲーム(Game)ビュー】でゲームがプレイ出来ます。
+__【作業1-2】__ Unityから「再生」をクリックすると、【ゲーム(Game)ビュー】でゲームがプレイ出来ます。
 
 * 名前を入力し、「OK」がクリックされると【問題１】で作成した`saveScore`メソッドが呼ばれ、データが保存されます。
 * このとき下記のいずれかのログが出力されます。
@@ -115,7 +116,8 @@ __【作業1-2】__Unityから「再生」をクリックすると、【ゲー�
 * 検索データ件数は５件とします。
 
 ### ヒント
-* [Unityドキュメント](http://mb.cloud.nifty.com/doc/current/datastore/basic_usage_unity.html)はデータストアの基本使い方法（保存・取得・更新・削除）が参照出来ます。
+* [ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)のUnityドキュメントをご参考ください。
+ * [データストア（Unity）ランキングを作る](http://mb.cloud.nifty.com/doc/current/datastore/ranking_unity.html)
 
 ### コーディング後の作業
 問題２のコーディングが完了したら、下記の作業を行います。
@@ -126,17 +128,17 @@ __【作業2-1】__該当する箇所に以下の処理を追記して、再生�
 
 ```csharp
 // 検索に失敗した場合の処理
-UnityEngine.Debug.Log("検索に失敗しました。エラーコード:"+e.ErrorCode);
+Debug.Log("検索に失敗しました。エラーコード:"+e.ErrorCode);
 ```
 
 * 検索に成功した場合の処理を行う箇所に追記
 
 ```csharp
 // 検索に成功した場合の処理
-UnityEngine.Debug.Log("検索に成功しました。")
+Debug.Log("検索に成功しました。")
 ```
 
-__【作業2-2】__Unityから「再生」し、「LeaderBoard」(ランキングを見る)ボタンをタップします。
+__【作業2-2】__ Unityから「再生」し、「LeaderBoard」(ランキングを見る)ボタンをタップします。
 * 画面起動後、`fetchTopRankers`メソッドが呼ばれ、【問題１】で保存されたデータが検索・取得されます。
 * このとき下記のいずれかのログが出力されます。
 
@@ -152,9 +154,8 @@ __【作業2-3】__検索に成功したら、該当する箇所に以下の処�
 * 検索に成功した場合の処理を行う箇所に追記
 
 ```csharp
-
 //検索成功時の処理
-UnityEngine.Debug.Log("検索に成功しました。");
+Debug.Log("検索に成功しました。");
 
 List<NCMB.Rankers> list = new List<NCMB.Rankers>();
 // 取得したレコードをscoreクラスとして保存
@@ -164,10 +165,9 @@ foreach (NCMBObject obj in objList) {
 	list.Add( new Rankers( s, n ) );
 }
 topRankers = list;
-
 ```
 
-__【作業2-4】__Unityから「再生」し、「LeaderBoard」(ランキングを見る)ボタンをタップします。
+__【作業2-4】__ Unityから「再生」し、「LeaderBoard」(ランキングを見る)ボタンをタップします。
 
 * 先ほどのスコアが表示されれば完成です！おめでとうございます★
 
