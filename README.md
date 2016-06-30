@@ -26,7 +26,7 @@
 [__「シューティングゲーム」__](https://github.com/natsumo/UnityFirstApp/archive/master.zip)
 
 1. 上記リンクをクリックしてzipファイルをローカルに保存し、zipファイルを解凍します
-2. 回答したフォルダ内にある「Assetss」＞「Scenes」＞「Stage.unity」をダブルクリックし、Unityエディタを起動します
+2. 解凍したフォルダ内にある「Assetss」＞「Scenes」＞「Stage.unity」をダブルクリックし、Unityエディタを起動します
 3. プロジェクトダイアログが表示されると、既存プロジェクトをインポートするので右上の「OPEN」を選択します
 4. zipファイルを解凍した場所のフォルダーを選択します
 5. しばらくするとインポートが終了し、Unityプロジェクトが開きます
@@ -186,3 +186,8 @@ __【作業2-4】__ Unityから「再生」し、「LeaderBoard」(ランキン�
 [__「【完成版】シューティングゲーム」__](https://github.com/natsumo/UnityFirstApp/archive/AnswerProject.zip)
 
 * APIキーを設定してご利用ください
+
+▼おまけ▼
+
+* [ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)を使って、シューティングゲームに「__ゴースト機能__」を実装することができます！
+ * 興味がある方は[こちら](https://github.com/natsumo/UnityFirstApp/blob/AnswerProject/Ghost.md)をご覧ください
