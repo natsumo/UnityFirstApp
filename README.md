@@ -18,3 +18,7 @@ https://github.com/natsumo/UnityFirstApp/blob/AnswerProject/Answer1.md
 ### 【問題２】の答え
 
 https://github.com/natsumo/UnityFirstApp/blob/AnswerProject/Answer2.md
+
+### 【おまけ】ゴースト機能
+
+https://github.com/natsumo/UnityFirstApp/blob/AnswerProject/Ghost.md
