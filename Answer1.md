@@ -17,8 +17,6 @@
 NCMBObject obj = new NCMBObject ("GameScore");
 obj ["name"] = name;//オブジェクトに名前とスコアを設定
 obj ["score"] = score;
-/* ゴースト機能 */
-//		obj ["Log"] = Player.posList;
 obj.SaveAsync ((NCMBException e) => { //この処理でサーバーに書き込む
     if (e != null)
     {
