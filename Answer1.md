@@ -14,10 +14,13 @@
 
 ```csharp
 // **********【問題１】名前とスコアを保存しよう！**********
+// 保存先クラスを作成
 NCMBObject obj = new NCMBObject ("GameScore");
-obj ["name"] = name;//オブジェクトに名前とスコアを設定
+// 値を設定
+obj ["name"] = name;
 obj ["score"] = score;
-obj.SaveAsync ((NCMBException e) => { //この処理でサーバーに書き込む
+// 保存を実施
+obj.SaveAsync ((NCMBException e) => { 
     if (e != null)
     {
         // 保存に失敗した場合の処理
