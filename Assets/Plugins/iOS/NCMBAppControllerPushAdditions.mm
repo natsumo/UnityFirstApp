@@ -49,7 +49,7 @@
 #include "PluginBase/AppDelegateListener.h"
 
 // For Push
-#import "NCMBPush.h"
+#include "NCMBRichPushView.h"
 #include <stdio.h>
 
 // Converts C style string to NSString
@@ -94,15 +94,6 @@ extern "C"
     
     // Save launch options for using later (after set key)
     NSDictionary * savedLaunchOptions;
-    
-    void afterLaunch()
-    {
-        // NCMB Track
-        //        [NCMBAnalytics trackAppOpenedWithLaunchOptions:savedLaunchOptions];
-        
-        // NCMB Handle Rich Push
-        [NCMBPush handleRichPush:[savedLaunchOptions objectForKey:@"UIApplicationLaunchOptionsRemoteNotificationKey"]];
-    }
     
     void registerCommon()
     {
@@ -156,6 +147,42 @@ extern "C"
         char* res = (char*)malloc(strlen([jsonstr UTF8String]) + 1);
         strcpy(res, [jsonstr UTF8String]);
         return res;
+    }
+    
+    void NCMBPushHandle(NSDictionary *userInfo)
+    {
+        // NCMB Handle Rich Push
+        if ([userInfo.allKeys containsObject:@"com.nifty.RichUrl"])
+        {
+            if ([[UIApplication sharedApplication] applicationState] != UIApplicationStateActive)
+            {
+                [NCMBRichPushView handleRichPush:userInfo];
+            }
+        }
+        
+        // NCMB Handle Analytics
+        if ([userInfo.allKeys containsObject:@"com.nifty.PushId"])
+        {
+            if ([[UIApplication sharedApplication] applicationState] != UIApplicationStateActive)
+            {
+                NSString * pushId = [userInfo objectForKey:@"com.nifty.PushId"];
+                const char *pushIdConstChar = [pushId UTF8String];
+                notifyUnityWithClassName("NCMBManager","onAnalyticsReceived",pushIdConstChar);
+            }
+        }
+        
+        if([userInfo objectForKey:@"aps"]){
+            if ([[(NSDictionary *)[userInfo objectForKey:@"aps"] objectForKey:@"sound"] isEqual:[NSNull null]]) {
+                NSMutableDictionary *beforeUserInfo = [NSMutableDictionary dictionaryWithDictionary:userInfo];
+                NSMutableDictionary *aps = [NSMutableDictionary dictionaryWithDictionary:[userInfo objectForKey:@"aps"]];
+                [aps removeObjectForKey:@"sound"];
+                [beforeUserInfo setObject:aps forKey:@"aps"];
+                userInfo = (NSMutableDictionary *)beforeUserInfo;
+            }
+        }
+        
+        AppController_SendNotificationWithArg(kUnityDidReceiveRemoteNotification, userInfo);
+        UnitySendRemoteNotification(userInfo);//userInfoの値にNullは許容しない
     }
     
 }
@@ -235,39 +262,16 @@ extern "C"
 
 - (void)application:(UIApplication*)application didReceiveRemoteNotification:(NSDictionary*)userInfo
 {
-    
-    // NCMB Handle Rich Push
-    if ([userInfo.allKeys containsObject:@"com.nifty.RichUrl"])
+    NCMBPushHandle(userInfo);
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))handler
+{
+    NCMBPushHandle(userInfo);
+    if (handler)
     {
-        if ([[UIApplication sharedApplication] applicationState] != UIApplicationStateActive)
-        {
-            [NCMBPush handleRichPush:userInfo];
-        }
+        handler(UIBackgroundFetchResultNoData);
     }
-    
-    // NCMB Handle Analytics
-    if ([userInfo.allKeys containsObject:@"com.nifty.PushId"])
-    {
-        if ([[UIApplication sharedApplication] applicationState] != UIApplicationStateActive)
-        {
-            NSString * pushId = [userInfo objectForKey:@"com.nifty.PushId"];
-            const char *pushIdConstChar = [pushId UTF8String];
-            notifyUnityWithClassName("NCMBManager","onAnalyticsReceived",pushIdConstChar);
-        }
-    }
-    
-    if([userInfo objectForKey:@"aps"]){
-        if ([[(NSDictionary *)[userInfo objectForKey:@"aps"] objectForKey:@"sound"] isEqual:[NSNull null]]) {
-            NSMutableDictionary *beforeUserInfo = [NSMutableDictionary dictionaryWithDictionary:userInfo];
-            NSMutableDictionary *aps = [NSMutableDictionary dictionaryWithDictionary:[userInfo objectForKey:@"aps"]];
-            [aps removeObjectForKey:@"sound"];
-            [beforeUserInfo setObject:aps forKey:@"aps"];
-            userInfo = (NSMutableDictionary *)beforeUserInfo;
-        }
-    }
-    
-    AppController_SendNotificationWithArg(kUnityDidReceiveRemoteNotification, userInfo);
-    UnitySendRemoteNotification(userInfo);//userInfoの値にNullは許容しない
 }
 
 
