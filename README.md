@@ -1,13 +1,19 @@
-# 【Unity問題集】『オンラインランキング機能を作ってみよう！「シューティングゲーム」』
+# 【Unity問題集】<br>オンラインランキング機能を作ってみよう！<br>「シューティングゲーム」
+_2017/05/17作成_
 
 ![RendaGame](/readme-img/RendaGame.png)
 
+GitHub<br>
+**https://github.com/natsumo/UnityFirstApp**
+
+<div style="page-break-before:always"></div>
+
 ## コンテンツ概要
 
-* [ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)の機能『データストア』を学習するための問題集です
-* [ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)の利用登録（無料）が必要です
+* ニフティクラウド mobile backend の機能『データストア』を学習するための問題集です
+* ニフティクラウド mobile backend の利用登録（無料）が必要です
 * 問題用プロジェクトにはオンラインランキング機能が実装されていない状態の「シューティングゲーム」です
-* 既に実装済みの[ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)を利用するための準備（SDK導入など）方法の詳細は[こちら](http://mb.cloud.nifty.com/doc/current/introduction/quickstart_unity.html)をご覧ください
+* 既に実装済みのニフティクラウド mobile backend を利用するための準備（SDK導入など）方法の詳細はこちらをご覧ください<br>http://mb.cloud.nifty.com/doc/current/introduction/quickstart_unity.html
 
 ## 問題について
 
@@ -17,13 +23,12 @@
    - Unity 3Dが動作するWindows PC もしくはMac PC
    - Unity5.3以降のインストーラ（無料です）
 
-## 問題に取り組む前の準備
+<div style="page-break-before:always"></div>
 
+## 問題に取り組む前の準備
 ### プロジェクトのダウンロード
 
-▼問題用プロジェクト▼
-
-[__「シューティングゲーム」__](https://github.com/natsumo/UnityFirstApp/archive/master.zip)
+▼問題用プロジェクト▼<br>**https://github.com/natsumo/UnityFirstApp/archive/Question.zip**
 
 1. 上記リンクをクリックしてzipファイルをローカルに保存し、zipファイルを解凍します
 2. Unityエディタを起動します
@@ -39,13 +44,15 @@
 3. GameOverになるとゲームプレイヤーの名前を入力するアラートが表示されますので、名前を入力し「Submit」をクリックします
 4. ゲームプレイヤーの名前とスコアが保存され、初期画面に戻ります
 
-※__注意__：問題に取り組む前の状態では「LeaderBoard」(ランキングを見る)ボタンをタップしてもランキングは表示されません
+※ __注意__：問題に取り組む前の状態では「LeaderBoard」(ランキングを見る)ボタンをタップしてもランキングは表示されません
+
+<div style="page-break-before:always"></div>
 
 ### アプリの新規作成とAPIキーの設定
 
 ![mBaaS](/readme-img/mBaaS.png)
 
-*  [ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)にログインしアプリの新規作成を行います
+*  ニフティクラウド mobile backend にログインしアプリの新規作成を行います
 * アプリ名はわかりやすいものにしましょう　例）「UnityShootGame」
 * アプリが作成されるとAPIキーが２種類（アプリケーションキーとクライアントキー）発行されます
 * 次で使用します
@@ -53,14 +60,16 @@
 ![Unity](/readme-img/Unity.png)
 
 * 【ヒエラルキー(Hierarchy)ビュー】から`NCMBSettings`を編集します
-* 先程[ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)のダッシュボード上で確認したAPIキーを入力します
+* 先程ニフティクラウド mobile backend のダッシュボード上で確認したAPIキーを入力します
 
 ![問題0-1](/readme-img/0-1.png)
 
 * 【インスペクター(Inspector)ビュー】から「NCMB Settings」欄のApplication KeyとClient Keyの入力部分に各APIキーを入力します
 
-## __【問題１】__：名前とスコアの保存をしてみよう！
-`/Assets/Scripts/saveScore.cs`を開きます。下図の__`saveScore`__メソッドを編集し、引数の__`name`__（アラートで入力した名前）と__`score`__（シューティングゲームのスコア）の値をmBaaSに保存する処理をコーディングしてください。
+<div style="page-break-before:always"></div>
+
+## 【問題１】<br>名前とスコアの保存をしてみよう！
+`/Assets/Scripts/saveScore.cs`を開きます。下図の__`saveScore`__ メソッドを編集し、引数の__`name`__ （アラートで入力した名前）と__`score`__ （シューティングゲームのスコア）の値をニフティクラウド mobile backend に保存する処理をコーディングしてください。
 
 ![問題1-1](/readme-img/1-1.png)
 
@@ -69,46 +78,56 @@
 * `name`を保存するフィールドを「`name`」、`score`を保存するフィールドを「`score`」として保存してください
 
 ### ヒント
-* [ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)のUnityドキュメントをご参考ください
- * [データストア（Unity）基本的な使い方](http://mb.cloud.nifty.com/doc/current/datastore/basic_usage_unity.html)
+* ニフティクラウド mobile backend のUnityドキュメントをご参考ください<br>http://mb.cloud.nifty.com/doc/current/datastore/basic_usage_unity.html
+
+<div style="page-break-before:always"></div>
 
 ### コーディング後の作業
 問題１のコーディングが完了したら、下記の作業を行います
 
-__【作業1-1】__それぞれ該当する箇所に以下の処理を追記して、再生時にUnity Console上にログを表示できるようにします
+#### 【作業1-1】
+それぞれ該当する箇所に以下の処理を追記して、再生時にUnity Console上にログを表示できるようにします
 
 * 保存に失敗した場合の処理を行う箇所に追記
 
-```csharp
-// 保存に失敗した場合の処理
-Debug.Log("保存に失敗しました。エラーコード:"+e.ErrorCode);
-```
+ ![code1](/readme-img/code1.png)
 
 * 保存に成功した場合の処理を行う箇所に追記
 
-```csharp
-// 保存に成功した場合の処理
-Debug.Log("保存に成功しました。objectId:"+ obj.ObjectId);
-```
+ ![code2](/readme-img/code2.png)
 
-__【作業1-2】__ 「再生」をクリックし、ゲームをします
+#### 【作業1-2】
+「再生」をクリックし、ゲームをします
 
 * ゲームオーバーになったら名前を入力し、「OK」がクリックされると【問題１】で作成した`saveScore`メソッドが呼ばれ、データが保存されます
 * このとき下記のいずれかのログが出力されます
+ * 保存成功時：「`保存に成功しました。objectId:*********`」
+ * 保存失敗時：「`保存に失敗しました。エラーコード:******`」
 
-* 「`保存に成功しました。objectId:************`」の場合は保存成功です
-* 「`保存に失敗しました。エラーコード:************`」の場合は保存失敗です
+※ エラーコードが出た場合はこちらで確認できます<br>http://mb.cloud.nifty.com/doc/current/rest/common/error.html#REST_APIのエラーコードについて
 
-※エラーコードが出た場合は[こちら](http://mb.cloud.nifty.com/doc/current/rest/common/error.html#REST%20API%E3%81%AE%E3%82%A8%E3%83%A9%E3%83%BC%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)で確認できます
+<div style="page-break-before:always"></div>
 
-### 答え合わせ
+### 【問題１】答え合わせ
+#### ニフティクラウドmobile backend上での確認
+![mBaaS](/readme-img/mBaaS.png)
 
-▼答えはこちら▼
+* 保存されたデータを確認しましょう
+ * 「データストア」をクリックすると、「`GameScore`」クラスにデータが登録されていることが確認できます。
 
-[__【問題１】解答__](https://github.com/natsumo/UnityFirstApp/blob/AnswerProject/Answer1.md)
+ ![ans1-1](/readme-img/ans1-1.png)
 
+<div style="page-break-before:always"></div>
 
-## __【問題２】__：ランキングを表示しよう！
+#### コードの答え合わせ
+
+* 模範解答は以下です
+
+ ![Answer1](/readme-img/Answer1.png)
+
+<div style="page-break-before:always"></div>
+
+## 【問題２】<br>ランキングを表示しよう！
 `/Assets/Scripts/LeaderBoard.cs`を開きます。下図の`fetchTopRankers`メソッドを編集し、データストアの`GameScore`クラスに保存した`name`と`score`のデータを`score`の降順（スコアの高い順）で検索・取得する処理をコーディングしてください。
 
 ![問題2-1](/readme-img/2-1.png)
@@ -116,78 +135,81 @@ __【作業1-2】__ 「再生」をクリックし、ゲームをします
 * 検索データ件数は５件とします
 
 ### ヒント
-* [ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)のUnityドキュメントをご参考ください
- * [データストア（Unity）ランキングを作る](http://mb.cloud.nifty.com/doc/current/datastore/ranking_unity.html)
+* ニフティクラウド mobile backend のUnityドキュメントをご参考ください<br>http://mb.cloud.nifty.com/doc/current/datastore/ranking_unity.html
+
+<div style="page-break-before:always"></div>
 
 ### コーディング後の作業
 問題２のコーディングが完了したら、下記の作業を行います。
 
-__【作業2-1】__該当する箇所に以下の処理を追記して、再生時にUnity Console上にログを表示できるようにします
+#### 【作業2-1】
+該当する箇所に以下の処理を追記して、再生時にUnity Console上にログを表示できるようにします
 
 * 検索に失敗した場合の処理を行う箇所に追記
 
-```csharp
-// 検索に失敗した場合の処理
-Debug.Log("検索に失敗しました。エラーコード:"+e.ErrorCode);
-```
+ ![code3](/readme-img/code3.png)
 
 * 検索に成功した場合の処理を行う箇所に追記
 
-```csharp
-// 検索に成功した場合の処理
-Debug.Log("検索に成功しました。")
-```
+ ![code4](/readme-img/code4.png)
 
-__【作業2-2】__ Unityから「再生」し、「LeaderBoard」(ランキングを見る)ボタンをタップします
+#### 【作業2-2】
+Unityから「再生」し、「LeaderBoard」(ランキングを見る)ボタンをタップします
 * 画面起動後、`fetchTopRankers`メソッドが呼ばれ、【問題１】で保存されたデータが検索・取得されます
 * このとき下記のいずれかのログが出力されます
+ * 検索成功時：「`検索に成功しました。`」
+ * 検索失敗時：「`検索に失敗しました。エラーコード：******`」
 
-* 「`検索に成功しました。`」が表示された場合は検索成功です
-* 「`検索に失敗しました。エラーコード:************`」が表示された場合は検索失敗です
+※ エラーコードが出た場合はこちらで確認できます<br>http://mb.cloud.nifty.com/doc/current/rest/common/error.html#REST_APIのエラーコードについて
 
-※エラーコードが出た場合は[こちら](http://mb.cloud.nifty.com/doc/current/rest/common/error.html#REST%20API%E3%81%AE%E3%82%A8%E3%83%A9%E3%83%BC%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)で確認できます
+<div style="page-break-before:always"></div>
 
-* 検索の状態（成功・失敗）に関係なく、「LeaderBoard」(ランキングを見る)ボタンをタップしても、まだランキングは表示されません
-
-__【作業2-3】__検索に成功したら、該当する箇所に以下の処理を追記して、取得した値から必要なデータを取り出し、ランキング画面へ反映させます
+#### 【作業2-3】
+検索に成功したら、該当する箇所に以下の処理を追記して、取得した値から必要なデータを取り出し、ランキング画面へ反映させます
 
 * 検索に成功した場合の処理を行う箇所に追記
 
-```csharp
-//検索成功時の処理
-Debug.Log("検索に成功しました。");
+ ![code5](/readme-img/code5.png)
 
-List<NCMB.Rankers> list = new List<NCMB.Rankers>();
-// 取得したレコードをscoreクラスとして保存
-foreach (NCMBObject obj in objList) {
-	int    s = System.Convert.ToInt32(obj["score"]);
-	string n = System.Convert.ToString(obj["name"]);
-	list.Add( new Rankers( s, n ) );
-}
-topRankers = list;
-```
-
-__【作業2-4】__ Unityから「再生」し、「LeaderBoard」(ランキングを見る)ボタンをタップします
+#### 【作業2-4】
+Unityから「再生」し、「LeaderBoard」(ランキングを見る)ボタンをタップします
 
 * 先ほどのスコアが表示されれば完成です！おめでとうございます★
 
-### 答え合わせ
+<div style="page-break-before:always"></div>
 
-▼答えはこちら▼
+### 【問題２】答え合わせ
+#### ランキング画面の確認
 
-[__【問題２】解答__](https://github.com/natsumo/UnityFirstApp/blob/AnswerProject/Answer2.md)
+* ランキング画面を確認しましょう
+ * 「LeaderBoard」(ランキングを見る)ボタンをタップすると以下のようにランキングが表示されます。
+
+ ![ans2-1](/readme-img/ans2-1.png)
+
+* 上図はランキングが表示されることを確認しましょう！
+
+<div style="page-break-before:always"></div>
+
+#### コードの答え合わせ
+
+* 模範解答は以下です
+
+ ![Answer2](/readme-img/Answer2.png)
+
+<div style="page-break-before:always"></div>
 
 ## 参考
 
 * 問題の回答を実装した完全なプロジェクトをご用意しています
 
-▼完成版プロジェクト▼
-
-[__「【完成版】シューティングゲーム」__](https://github.com/natsumo/UnityFirstApp/archive/AnswerProject.zip)
+▼完成版プロジェクト▼<br>**https://github.com/natsumo/UnityFirstApp/archive/AnswerProject.zip**
 
 * APIキーを設定してご利用ください
 
-▼おまけ▼
+### おまけ
 
-* [ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)を使って、シューティングゲームに「__ゴースト機能__」を実装することができます！
- * 興味がある方は[こちら](https://github.com/natsumo/UnityFirstApp/blob/AnswerProject/Ghost.md)をご覧ください
+* ニフティクラウド mobile backend を使って、シューティングゲームに「__ゴースト機能__」を実装することができます！
+
+ ![ghost0](/readme-img/ghost0.png)
+
+* 興味がある方はこちらをご覧ください<br>https://github.com/natsumo/UnityFirstApp/blob/master/Ghost.md
