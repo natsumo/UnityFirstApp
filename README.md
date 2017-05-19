@@ -1,10 +1,10 @@
 # 【Unity問題集】<br>オンラインランキング機能を作ってみよう！<br>「シューティングゲーム」
-_2017/05/17作成 (2017/05/18修正)_
+_2017/05/17作成 (2017/05/19修正)_
 
 ![RendaGame](/readme-img/RendaGame.png)
 
 GitHub<br>
-**https://github.com/natsumo/UnityFirstApp**
+**https://goo.gl/H3Gxbi**
 
 <div style="page-break-before:always"></div>
 
